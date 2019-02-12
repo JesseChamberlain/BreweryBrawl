@@ -9,6 +9,8 @@ Run set up: `npm install`
 
 Run webpack bundler: `npm run build`
 
+Run webpack watcher: `npm run watch`
+
 Run the server: `node server.js`
 
 Available at: http://localhost:3333/
