@@ -1,24 +1,12 @@
 const express = require('express');
 const request = require('request');
 const app = express();
-const sass = require('node-sass-middleware');
 const path = require('path');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
-
-// Compile our sass
-app.use(
-    sass({
-        /* Options */
-        src: __dirname + '/src/sass',
-        dest: __dirname + '/public/css',
-        debug: true,
-        outputStyle: 'compressed'
-    })
-);
 
 app.use(express.static(path.join(__dirname, 'public')));
 

@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import '../sass/style.scss';
 
 // This is a test function to make sure webpack has compiled assets
 function component() {

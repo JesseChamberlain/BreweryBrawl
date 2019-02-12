@@ -1,29 +1,24 @@
-.ghost-input {
-    background-color: blue;
-    font-weight: bold;
-}
-
 .grid-container {
-  display: grid;
-  grid-gap: 10px;
-  background-color: #ccc;
-  padding: 10px;
-  min-width: auto;
-  min-height: auto;
+    display: grid;
+    grid-gap: 10px;
+    background-color: #ccc;
+    padding: 10px;
+    min-width: auto;
+    min-height: auto;
 }
 
 .grid-item {
-  background-color:#FFF;
+    background-color: #FFF;
 }
 
 .item1 {
-  grid-column: 1 / span 2;
-  grid-row: 1;
-  max-width: 50%;
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    max-width: 50%;
 }
 
 .brewery-map {
-  width: 150px;
-  height: 150px;
-  padding-top: 20px;
+    width: 150px;
+    height: 150px;
+    padding-top: 20px;
 }
