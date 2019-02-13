@@ -2,8 +2,13 @@
 
 ## Open Brewery DB app
 
-Run: `npm install`
+Make sure to copy the .env-example file to a new file .env
+You can use whatever port you want but ask Brendan Rielly for the Untappd client id and client secret to connect to the API
 
-Command to run the server: `node server.js`
+Run set up: `npm install`
+
+Run webpack bundler: `npm run build`
+
+Run the server: `node server.js`
 
 Available at: http://localhost:3333/
