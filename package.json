@@ -10,7 +10,9 @@
     "node-sass": "^4.11.0",
     "node-sass-middleware": "^0.11.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "cucumber": "^5.1.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
