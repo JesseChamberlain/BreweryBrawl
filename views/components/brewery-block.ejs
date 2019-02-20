@@ -1,17 +1,12 @@
 <div class="brewery-block">
+    <div class="brewery-img">
+        <img src="<%= brewery.brewery_label %>" alt="<%= brewery.brewery_name %> Logo">
+    </div>
     <h3 class="brewery-name">
-        <%= brewery.name %>
+        <%= brewery.brewery_name %>
     </h3>
-    <% if(brewery.type) { %>
-        <div class="brewery-type">
-            <%= brewery.type %>
-        </div>
-    <% } %>
     <div class="brewery-address">
-        <% if(brewery.street) { %>
-            <%= brewery.street %><br>
-        <% } %>
-        <%= brewery.city %>, <%= brewery.state %> <%= brewery.postal_code %>
+        <%= brewery.location.brewery_city %>, <%= brewery.location.brewery_state %>
     </div>
     <% if(brewery.phone) { %>
         <div class="brewery-phone">
@@ -21,6 +16,18 @@
     <% if(brewery.website_url) { %>
         <div class="brewery-website">
             <a href="<%= brewery.website_url %>">Website</a>
+        </div>
+    <% } %>
+
+    <% if(brewery.location.lng, brewery.location.lat) { %>
+        <div class="brewery-map">
+                <iframe
+                id="map-frame"
+                width="150px"
+                height="150px"
+                frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCnPeSCSirjqSR0T5aX2dpKFhN9I7Xefjs&q=<%= brewery.location.lat %>,<%= brewery.location.lng %>" zoom="70" allowfullscreen>
+                </iframe>
         </div>
     <% } %>
 </div>

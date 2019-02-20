@@ -1,29 +1,40 @@
 {
-  "name": "brewerybrawl",
-  "version": "1.0.0",
-  "description": "Open Brewery DB app",
-  "main": "index.js",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "ejs": "^2.6.1",
-    "express": "^4.16.4",
-    "node-sass": "^4.11.0",
-    "node-sass-middleware": "^0.11.0"
-  },
-  "devDependencies": {
-    "cucumber": "^5.1.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JesseChamberlain/BreweryBrawl.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JesseChamberlain/BreweryBrawl/issues"
-  },
-  "homepage": "https://github.com/JesseChamberlain/BreweryBrawl#readme"
+    "name": "brewerybrawl",
+    "version": "1.0.0",
+    "description": "Open Brewery DB app",
+    "private": true,
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "dotenv": "^6.2.0",
+        "ejs": "^2.6.1",
+        "express": "^4.16.4",
+        "lodash": "^4.17.11",
+        "node-sass": "^4.11.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.2.2",
+        "@babel/preset-env": "^7.3.1",
+        "babel-loader": "^8.0.5",
+        "css-loader": "^2.1.0",
+        "prettier": "^1.16.2",
+        "sass-loader": "^7.1.0",
+        "style-loader": "^0.23.1",
+        "webpack": "^4.29.3",
+        "webpack-cli": "^3.2.3"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack --config webpack.config.js",
+        "watch": "webpack --watch"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/JesseChamberlain/BreweryBrawl.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/JesseChamberlain/BreweryBrawl/issues"
+    },
+    "homepage": "https://github.com/JesseChamberlain/BreweryBrawl#readme"
 }
