@@ -62,7 +62,7 @@ app.get('/brewery/:id', function(req, res) {
 
     request(url, function(err, response, body) {
         if (err) {
-            res.render('index', {
+            res.render('brewery', {
                 breweries: null,
                 error: 'Error, please try again'
             });
