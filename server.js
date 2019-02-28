@@ -52,3 +52,36 @@ app.post('/', function(req, res) {
         }
     });
 });
+
+// render our brewery page
+app.get('/brewery/:id', function(req, res) {
+    let breweryId = req.params.id;
+    let url = `https://api.untappd.com/v4/brewery/info/${breweryId}?client_id=${
+        process.env.UNTAPPD_CLIENT_ID
+    }&client_secret=${process.env.UNTAPPD_CLIENT_SECRET}`;
+
+    request(url, function(err, response, body) {
+        if (err) {
+            res.render('index', {
+                breweries: null,
+                error: 'Error, please try again'
+            });
+            console.log('error', err);
+        } else {
+            let data = JSON.parse(body);
+            let brewery = data.response.brewery;
+            if (data.meta.code !== 200) {
+                res.render('brewery', {
+                    brewery: null,
+                    error: `Error, please try again: ${data.meta.error_detail}`
+                });
+                console.log('error', err);
+            } else {
+                res.render('brewery', {
+                    brewery: brewery,
+                    error: null
+                });
+            }
+        }
+    });
+});
