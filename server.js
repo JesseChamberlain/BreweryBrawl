@@ -70,6 +70,7 @@ app.get('/brewery/:id', function(req, res) {
         } else {
             let data = JSON.parse(body);
             let brewery = data.response.brewery;
+            console.log(brewery.beer_list.items);
             if (data.meta.code !== 200) {
                 res.render('brewery', {
                     brewery: null,
@@ -79,6 +80,7 @@ app.get('/brewery/:id', function(req, res) {
             } else {
                 res.render('brewery', {
                     brewery: brewery,
+                    beers: brewery.beer_list.items,
                     error: null
                 });
             }
