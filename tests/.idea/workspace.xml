@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4199ccf2-c11c-44c8-a866-19de4b7873c9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/addition.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/addition.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/steps/browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/steps/browser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../views/index.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cucumbertest.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/calculator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/math.oldjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/steps/math.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -49,29 +48,20 @@
         <counts>
           <entry key="ejs" value="22" />
           <entry key="feature" value="103" />
-          <entry key="js" value="840" />
+          <entry key="js" value="844" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Cucumber" value="103" />
           <entry key="EJS" value="22" />
-          <entry key="JavaScript" value="840" />
+          <entry key="JavaScript" value="844" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cucumbertest.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
@@ -90,29 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/features/calculator.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/steps/math.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/steps/browser.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="46" lean-forward="true" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+            <state relative-caret-position="199">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
             </state>
           </provider>
         </entry>
@@ -155,8 +127,8 @@
         <option value="$PROJECT_DIR$/steps/math20.js" />
         <option value="$PROJECT_DIR$/steps/math.js" />
         <option value="$PROJECT_DIR$/../views/index.ejs" />
-        <option value="$PROJECT_DIR$/steps/browser.js" />
         <option value="$PROJECT_DIR$/features/addition.feature" />
+        <option value="$PROJECT_DIR$/steps/browser.js" />
       </list>
     </option>
   </component>
@@ -268,12 +240,12 @@
       <workItem from="1551301946734" duration="915000" />
       <workItem from="1551386485308" duration="1362000" />
       <workItem from="1551457059677" duration="637000" />
-      <workItem from="1551809343914" duration="333000" />
+      <workItem from="1551809343914" duration="568000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25315000" />
+    <option name="totallyTimeSpent" value="25550000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-250" y="-1041" width="1507" height="930" extended-state="0" />
@@ -366,8 +338,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/steps/browser.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="46" lean-forward="true" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+        <state relative-caret-position="199">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
