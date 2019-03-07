@@ -1,9 +1,8 @@
-import _ from 'lodash';
 import '../sass/style.scss';
 import Icon from '../img/logo.png';
 
 // This is a test function to make sure webpack has compiled assets
-function component() {
+function buildBody() {
     let element = document.createElement('div');
 
     element.innerHTML = 'Brought to you by the Domain.com team.';
@@ -20,4 +19,3 @@ function component() {
 }
 
 document.body.appendChild(component());
-
