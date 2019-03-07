@@ -14,7 +14,10 @@ function component() {
 
    element.appendChild(myIcon);
 
+   document.getElementById('brewHeader').appendChild(myIcon);
+
     return element;
 }
 
 document.body.appendChild(component());
+
