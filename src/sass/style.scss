@@ -9,7 +9,6 @@
 
 .grid-item {
     background-color: #FFF;
-    background: url('./icon.jpg')l
 }
 
 .item1 {
@@ -22,4 +21,8 @@
     width: 150px;
     height: 150px;
     padding-top: 20px;
+}
+
+header {
+    background: url('/public/img/logo.png');
 }

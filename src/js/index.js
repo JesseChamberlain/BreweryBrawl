@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import '../sass/style.scss';
-import Icon from './icon.jpg';
+import Icon from '../img/logo.png';
 
 // This is a test function to make sure webpack has compiled assets
 function component() {
