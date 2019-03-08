@@ -1,3 +1,4 @@
+<% if(brewery.brewery_name.indexOf('Homebrew') === -1) { %>
 <div class="brewery-block">
     <div class="brewery-img">
         <a href="/brewery/<%= brewery.brewery_id %>">
@@ -34,3 +35,4 @@
     <% } %>
     <a href="/brewery/<%= brewery.brewery_id %>">See More</a>
 </div>
+<% } %>
