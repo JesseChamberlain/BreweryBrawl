@@ -9,6 +9,19 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                  {
+                    loader: 'file-loader',
+                    options: {
+                        limit: 8000, // Convert images < 8kb to base64 strings
+                      name: '../img/[hash]-[name].[ext]',
+                    },
+                  }
+                ],
+              },
+             
+            {
                 test: /\.m?js$/,
                 exclude: /(node_modules)/,
                 use: {
@@ -22,6 +35,9 @@ module.exports = {
                 test: /\.scss$/,
                 use: ['style-loader', 'css-loader', 'sass-loader']
             }
+          
+            
         ]
-    }
+    },
+
 };
