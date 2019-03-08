@@ -7,13 +7,13 @@ function buildBody() {
 
     element.innerHTML = 'Brought to you by the Domain.com team.';
 
-       // Add the image to our existing div.
-   var myIcon = new Image();
-   myIcon.src = Icon;
+    // Add the image to our existing div.
+    var myIcon = new Image();
+    myIcon.src = Icon;
 
-   element.appendChild(myIcon);
+    element.appendChild(myIcon);
 
-   document.getElementById('brewHeader').appendChild(myIcon);
+    document.getElementById('header-link').appendChild(myIcon);
 
     return element;
 }

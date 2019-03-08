@@ -1,7 +1,9 @@
 <% if(brewery.brewery_name.indexOf('Homebrew') === -1) { %>
 <div class="brewery-block">
     <div class="brewery-img">
-        <img src="<%= brewery.brewery_label %>" alt="<%= brewery.brewery_name %> Logo">
+        <a href="/brewery/<%= brewery.brewery_id %>">
+            <img src="<%= brewery.brewery_label %>" alt="<%= brewery.brewery_name %> Logo">
+        </a>
     </div>
     <h3 class="brewery-name">
         <%= brewery.brewery_name %>
@@ -31,5 +33,6 @@
                 </iframe>
         </div>
     <% } %>
+    <a href="/brewery/<%= brewery.brewery_id %>">See More</a>
 </div>
 <% } %>

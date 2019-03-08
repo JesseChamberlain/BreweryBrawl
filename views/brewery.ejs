@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title><%= brewery.brewery_name %></title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300'  type='text/css'>
+</head>
+
+<body>
+    <%- include('components/header'); %>
+    <div class="container">
+        <% if(brewery !== null){ %>
+            <div class="brewery-img">
+                <a href="/brewery?id=<%= brewery.brewery_id %>">
+                    <% if(brewery.brewery_label_hd) { %>
+                        <img src="<%= brewery.brewery_label_hd %>" alt="<%= brewery.brewery_name %> Logo">
+                    <% } else if(brewery.brewery_label) { %>
+                        <img src="<%= brewery.brewery_label %>" alt="<%= brewery.brewery_name %> Logo">
+                    <% } %>
+                </a>
+            </div>
+            <h3 class="brewery-name">
+                <%= brewery.brewery_name %>
+            </h3>
+            <p class="brewery-type">
+                <%= brewery.brewery_type %>
+            </p>
+            <p class="brewery-rating">
+                Rating: <%= brewery.rating.rating_score %>
+            </p>
+            <% if(brewery.brewery_description) { %>
+                <div class="brewery-description">
+                    <%= brewery.brewery_description %>
+                </div>
+            <% } %>
+            <p class="brewery-address">
+                <%= brewery.location.brewery_address %><br>
+                <%= brewery.location.brewery_city %>, <%= brewery.location.brewery_state %>
+            </p>
+            <% if(brewery.contact.url) { %>
+                <div class="brewery-website">
+                    <a href="<%= brewery.contact.url %>">Website</a>
+                </div>
+            <% } %>
+
+            <% if(brewery.location.brewery_lng, brewery.location.brewery_lat) { %>
+                <div class="brewery-map">
+                        <iframe
+                        id="map-frame"
+                        width="700px"
+                        height="500px"
+                        frameborder="0" style="border:0"
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCnPeSCSirjqSR0T5aX2dpKFhN9I7Xefjs&q=<%= brewery.location.brewery_lat %>,<%= brewery.location.brewery_lng %>" zoom="70" allowfullscreen>
+                        </iframe>
+                </div>
+            <% } %>
+             <% if(beers !== null){ %>
+                <div class="brewery-beers">
+                    <% beers.forEach(function(beer){ %>
+                        <%- include('components/beer', {beer: beer.beer}); %>
+                    <% }); %>
+                </div>
+            <% } %>
+        <% } %>
+        <% if(error !== null){ %>
+            <p><%= error %></p>
+        <% } %>
+    </div>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
