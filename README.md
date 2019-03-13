@@ -2,8 +2,35 @@
 
 ## Untappd.com Brewery API app
 
-Make sure to copy the .env-example file to a new file .env
-You can use whatever port you want but ask Brendan Rielly for the Untappd client id and client secret to connect to the API
+This is a web application using the Untappd API and connecting various Google APIs.
+The current iteration of Master is available to demo here: https://brewery-brawl.herokuapp.com/
+
+## Stack
+
+#### Frameworks & Modules
+
+-   express
+-   ejs
+-   node-sass
+-   webpack
+-   babel
+
+#### Testing & Style Enforcement
+
+-   cucumber io
+-   selenium-webdriver
+-   prettier
+
+#### APIs
+
+-   Untappd
+-   Google Maps
+
+## Setup Instructions
+
+Make sure to copy the `.env-example` file to a new file `.env`
+The default port is set to `PORT=3333` but you can use whatever port you want.
+Ask Brendan Rielly for the Untappd client id and client secret to connect to the API
 
 Run set up: `npm install`
 
