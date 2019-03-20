@@ -1,6 +1,7 @@
 import '../sass/style.scss';
 import Icon from '../img/logo.png';
 import TaranImageSrc from '../img/taran.jpg';
+import gravityTapImageSrc from '../img/GravityTap.jpg'
 
 // This is a test function to make sure webpack has compiled assets
 function buildBody() {
@@ -31,4 +32,16 @@ function createTaranImage() {
 let taranDiv = document.getElementById('taran');
 if (taranDiv) {
     taranDiv.appendChild(createTaranImage());
+}
+
+function beerHistoryImage() {
+    let gravityTap = new Image();
+    gravityTap.src = gravityTapImageSrc;
+
+    return gravityTap;
+}
+
+let beerHistoryDiv = document.getElementById('gravityTap');
+if (beerHistoryDiv) {
+    beerHistoryDiv.appendChild(beerHistoryImage());
 }
