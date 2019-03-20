@@ -29,9 +29,10 @@
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "webpack --config webpack.dev.js && node server.js",
         "build": "webpack --config webpack.prod.js",
         "watch": "webpack --config webpack.dev.js --watch",
-        "start": "webpack --config webpack.dev.js && node server.js"
+        "start": "node server.js"
     },
     "repository": {
         "type": "git",
