@@ -34,11 +34,11 @@ Ask Brendan Rielly for the Untappd client id and client secret to connect to the
 
 Run set up: `npm install`
 
-Run webpack development and start the server: `npm start`
+Run webpack bundler: `npm run build`
 
-Run webpack development watcher: `npm run watch`
+Run webpack watcher: `npm run watch`
 
-Run webpack production bundler: `npm run build`
+Run the server: `npm start`
 
 Available at: http://localhost:3333/
 
