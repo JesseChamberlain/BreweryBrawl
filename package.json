@@ -24,12 +24,14 @@
         "sass-loader": "^7.1.0",
         "style-loader": "^0.23.1",
         "webpack": "^4.29.5",
-        "webpack-cli": "^3.2.3"
+        "webpack-cli": "^3.2.3",
+        "webpack-merge": "^4.2.1"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "webpack --config webpack.config.js",
-        "watch": "webpack --watch",
+        "dev": "webpack --config webpack.dev.js && node server.js",
+        "build": "webpack --config webpack.prod.js",
+        "watch": "webpack --config webpack.dev.js --watch",
         "start": "node server.js"
     },
     "repository": {
