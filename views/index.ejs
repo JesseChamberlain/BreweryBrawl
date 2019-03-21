@@ -1,67 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <title>Brewery Brawl</title>
+        <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans:300"
+            type="text/css"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Bubblegum+Sans"
+            rel="stylesheet"
+        />
+        <!-- Bootstrap CSS -->
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+        />
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Brewery Brawl</title>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300'  type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-</head>
-
-<body>
-    <%- include('components/header'); %>
-    <div class="container">
-        <fieldset>
-            <form action="/" method="post">
-                <input name="query" type="text" class="ghost-input" placeholder="Search for a Brewery" required>
-                <input type="submit" class="ghost-button" value="Get Brewery">
-            </form>
+    <body class="container-fluid">
+        <%- include('components/header'); %>
+        <div class="container">
+            <fieldset>
+                <form action="/" method="post">
+                    <input
+                        name="query"
+                        type="text"
+                        class="ghost-input"
+                        placeholder="Search for a Brewery"
+                        required
+                    />
+                    <input
+                        type="submit"
+                        class="ghost-button"
+                        value="Get Brewery"
+                    />
+                </form>
+            </fieldset>
+        </div>
+        <div class="container"> 
             <% if(breweries !== null){ %>
-                <div class="brewery-search-results" id="brewery-results">
-                    <% breweries.forEach(function(brewery){ %>
-                        <%- include('components/brewery-block', {brewery: brewery.brewery}); %>
-                    <% }); %>
-                </div>
+            <div class="brewery-search-results row" id="brewery-results">
+                <% breweries.forEach(function(brewery){ %> <%-
+                include('components/brewery-block', {brewery:
+                brewery.brewery}); %> <% }); %>
+            </div>
+            <% } %> <% if(error !== null){ %>
+            <p><%= error %></p>
             <% } %>
-            <% if(error !== null){ %>
-                <p><%= error %></p>
-            <% } %>
-        </fieldset>
-    </div>
-    <div>
-            <a id="gravityTap" target="_blank" rel="noopener nofollow" href="https://en.wikipedia.org/wiki/Beer"></a>
-        <p>Beer is one of the oldest[1][2][3] and most widely consumed[4] alcoholic drinks in the world, and the 
-        third most popular drink overall after water and tea.[5] Beer is brewed from cereal grains—most commonly 
-        from malted barley, though wheat, maize (corn), and rice are also used. During the brewing process, fermentation
-         of the starch sugars in the wort produces ethanol and carbonation in the resulting beer.[6] Most modern beer is 
-         brewed with hops, which add bitterness and other flavours and act as a natural preservative and stabilizing agent. 
-         Other flavouring agents such as gruit, herbs, or fruits may be included or used instead of hops. In commercial brewing, 
-         the natural carbonation effect is often removed during processing and replaced with forced carbonation.[7]</p>
+        </div>
 
-       <p> Some of humanity's earliest known writings refer to the production and distribution of beer: the Code of Hammurabi 
-           included laws regulating beer and beer parlours,[8] and "The Hymn to Ninkasi", a prayer to the Mesopotamian goddess 
-           of beer, served as both a prayer and as a method of remembering the recipe for beer in a culture with few literate 
-           people.[9][10]</p>
-        
-        <p>Beer is distributed in bottles and cans and is also commonly available on draught, particularly in pubs and bars. 
-            The brewing industry is a global business, consisting of several dominant multinational companies and many thousands
-             of smaller producers ranging from brewpubs to regional breweries. The strength of modern beer is usually around 4% to 6% 
-             alcohol by volume (ABV), although it may vary between 0.5% and 20%, with some breweries creating examples of 40% ABV and 
-             above.[11]</p>
-        
-       <p>Beer forms part of the culture of many nations and is associated with social traditions such as beer festivals, as well as 
-           a rich pub culture involving activities like pub crawling and pub games.</p>
-    </div>
-    <script src="js/main.js"></script>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
+        <div class="container">
+            <div class="row">
+                <a
+                    id="gravityTap"
+                    target="_blank"
+                    rel="noopener nofollow"
+                    href="https://en.wikipedia.org/wiki/Beer"
+                ></a>
+                <p class="col-sm history-column">
+                    Beer is one of the oldest[1][2][3] and most widely
+                    consumed[4] alcoholic drinks in the world, and the third
+                    most popular drink overall after water and tea.[5]<br/> Beer is
+                    brewed from cereal grains—most commonly from malted barley,
+                    though wheat, maize (corn), and rice are also used. During
+                    the brewing process, fermentation of the starch sugars in
+                    the wort produces ethanol and carbonation in the resulting
+                    beer.[6]<br/> Most modern beer is brewed with hops, which add
+                    bitterness and other flavours and act as a natural
+                    preservative and stabilizing&nbsp;agent. 
+                </p>
 
+                <p class="col-sm history-column">
+                    Other flavouring agents
+                    such as gruit, herbs, or fruits may be included or used
+                    instead of hops. In commercial brewing, the natural
+                    carbonation effect is often removed during processing and
+                    replaced with forced carbonation.[7]<br/>
+                    Some of humanity's earliest known writings refer to the
+                    production and distribution of beer: the Code of Hammurabi
+                    included laws regulating beer and beer parlours,[8]<br/> and "The
+                    Hymn to Ninkasi", a prayer to the Mesopotamian goddess of
+                    beer, served as both a prayer and as a method of remembering
+                    the recipe for beer in a culture with few literate
+                    people.[9][10]
+                </p>
+
+                <p class="col-sm-12 history-column">
+                    Beer is distributed in bottles and cans and is also commonly
+                    available on draught, particularly in pubs and bars. The
+                    brewing industry is a global business, consisting of several
+                    dominant multinational companies and many thousands of
+                    smaller producers ranging from brewpubs to regional
+                    breweries. The strength of modern beer is usually around 4%
+                    to 6% alcohol by volume (ABV), although it may vary between
+                    0.5% and 20%, with some breweries creating examples of 40%
+                    ABV and above.[11]
+                </p>
+
+                <p class="col-sm-12 history-column">
+                    Beer forms part of the culture of many nations and is
+                    associated with social traditions such as beer festivals, as
+                    well as a rich pub culture involving activities like pub
+                    crawling and pub games.
+                </p>
+
+               
+            </div>
+        </div>
+
+        <script src="js/main.js"></script>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"
+        ></script>
+    </body>
 </html>
