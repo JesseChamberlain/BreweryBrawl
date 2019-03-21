@@ -84,6 +84,13 @@ fieldset {
     text-align: center;
     border: 6px solid #dba01ffa;
     margin: 15px;
+
+    img {
+        width: 100%;
+        width: 100%;
+        max-width: 560px;
+        padding: 5px;
+    }
 }
 
 .history-column {
@@ -116,18 +123,17 @@ fieldset {
         max-width: 100px;
         display: inline;
     }
-    
+
     .brewery-name {
         font-size: 20px;
         width: 100%;
     }
-    
+
     .brewery-address {
         font-size: 18px;
         width: 100%;
     }
 }
-
 
 // Animated linear gradient
 
