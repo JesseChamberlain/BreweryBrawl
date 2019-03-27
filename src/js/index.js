@@ -4,6 +4,13 @@ import taranImageSrc from '../img/taran.jpg';
 import gravityTapImageSrc from '../img/GravityTap.jpg';
 import imageImporter from './modules/imageImporter';
 
+// Set the images to their imports and id
+let images = [
+    [taranImageSrc, 'taran'],
+    [gravityTapImageSrc, 'gravityTap'],
+    [logoImageSrc, 'header-link']
+];
+
 // This is a test function to make sure webpack has compiled assets
 function buildBody() {
     let element = document.createElement('div');
@@ -14,15 +21,5 @@ function buildBody() {
 
 document.body.appendChild(buildBody());
 
-// // Uses imageImporter to import the required images to their elements
-// imageImporter(taranImageSrc, 'taran');
-// imageImporter(gravityTapImageSrc, 'gravityTap');
-// imageImporter(logoImageSrc, 'header-link');
-
-let images = [
-    [taranImageSrc, 'taran'],
-    [gravityTapImageSrc, 'gravityTap'],
-    [logoImageSrc, 'header-link']
-];
-
+// Load images to imageImporter
 imageImporter(images);
