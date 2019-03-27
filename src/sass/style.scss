@@ -50,9 +50,10 @@ h1 h2 h3 h4 h5 h6 {
 }
 
 .brewery-map {
-    width: 150px;
-    height: 150px;
-    padding-top: 20px;
+    padding: 5px;
+    border: 1px solid brown;
+    border-radius: 5px;
+    background-color: #fff;
 }
 .brewery-img {
     img {
@@ -73,22 +74,22 @@ fieldset {
 }
 
 #brewHeader {
-    height: 120px;
+    height: 85px;
     margin: 0 0 0 -74px;
+    padding: 5px;
     background-image: linear-gradient(
         141deg,
         #f9e402 0%,
         #dba01ffa 51%,
         #faf7de 75%
     );
-    text-align: center;
-    border: 6px solid #dba01ffa;
+    border: 1px solid #dba01ffa;
     margin: 15px;
 
     img {
         width: 100%;
-        width: 100%;
-        max-width: 560px;
+        max-width: 330px;
+        text-align: left;
         padding: 5px;
     }
 }
