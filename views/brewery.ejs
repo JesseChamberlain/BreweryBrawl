@@ -12,13 +12,11 @@
     <div class="container">
         <% if(brewery !== null){ %>
             <div class="brewery-img">
-                <a href="/brewery?id=<%= brewery.brewery_id %>">
-                    <% if(brewery.brewery_label_hd) { %>
-                        <img src="<%= brewery.brewery_label_hd %>" alt="<%= brewery.brewery_name %> Logo">
-                    <% } else if(brewery.brewery_label) { %>
-                        <img src="<%= brewery.brewery_label %>" alt="<%= brewery.brewery_name %> Logo">
-                    <% } %>
-                </a>
+                <% if(brewery.brewery_label_hd) { %>
+                    <img src="<%= brewery.brewery_label_hd %>" alt="<%= brewery.brewery_name %> Logo">
+                <% } else if(brewery.brewery_label) { %>
+                    <img src="<%= brewery.brewery_label %>" alt="<%= brewery.brewery_name %> Logo">
+                <% } %>
             </div>
             <h3 class="brewery-name">
                 <%= brewery.brewery_name %>

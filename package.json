@@ -15,6 +15,7 @@
         "@babel/core": "^7.2.2",
         "@babel/preset-env": "^7.3.1",
         "babel-loader": "^8.0.5",
+        "copy-webpack-plugin": "^5.0.1",
         "css-loader": "^2.1.0",
         "cucumber": "^5.1.0",
         "file-loader": "^3.0.1",
@@ -23,12 +24,14 @@
         "sass-loader": "^7.1.0",
         "style-loader": "^0.23.1",
         "webpack": "^4.29.5",
-        "webpack-cli": "^3.2.3"
+        "webpack-cli": "^3.2.3",
+        "webpack-merge": "^4.2.1"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "webpack --config webpack.config.js",
-        "watch": "webpack --watch",
+        "dev": "webpack --config webpack.dev.js && node server.js",
+        "build": "webpack --config webpack.prod.js",
+        "watch": "webpack --config webpack.dev.js --watch",
         "start": "node server.js"
     },
     "repository": {
