@@ -69,10 +69,10 @@
             <% } %>
              <% if(beers !== null){ %>
                 <div class="brewery-beers-container grid-col">
-                    <h3 class="title"><%= brewery.brewery_name %> - Beers</h3>
+                    <h3 class="title">Beers</h3>
                     <div class="brewery-beers">
                         <% beers.forEach(function(beer){ %>
-                        <%- include('components/beer', {beer: beer.beer}); %>
+                        <%- include('components/beer-block', {beer: beer.beer}); %>
                     <% }); %>
                     </div>
                 </div>

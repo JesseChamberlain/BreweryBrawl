@@ -74,22 +74,39 @@ h1 h2 h3 h4 h5 h6 {
         grid-column: 3;
         grid-row: 1 / 5;
         border: 1px solid $color-primary-0;
-        padding: 10px;
         position: relative;
-        max-height: 75vh;
         .brewery-beers {
             overflow-y: scroll;
             max-height: 65vh;
+            .beer-block {
+                padding: 10px;
+                &:nth-child(even) {
+                    background: #f2f2f2;
+                }
+            }
         }
         .title {
-            border-bottom: 1px solid #000;
+            border-bottom: 1px solid $color-primary-0;
+            padding: 10px;
+            margin-bottom: 0;
         }
     }
 }
 
 .beer-block {
+    .beer-name {
+        margin-top: 10px;
+    }
     p {
         margin-bottom: 5px;
+    }
+}
+
+.beer-container {
+    .beer-name {
+        font-size: 36px;
+        line-height: 46px;
+        margin-bottom: 10px;
     }
 }
 
