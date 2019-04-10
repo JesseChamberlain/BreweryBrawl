@@ -46,6 +46,14 @@ app.post('/', function(req, res) {
             } else {
                 let data = JSON.parse(body);
                 let breweries = data.response;
+                // Filter our results and remove any homebrew results
+                let nonHomebrewBreweries = breweries.brewery.items.filter(
+                    function(item) {
+                        return (
+                            item.brewery.brewery_name.indexOf('Homebrew') === -1
+                        );
+                    }
+                );
                 if (data.meta.code !== 200) {
                     res.render('index', {
                         breweries: null,
@@ -54,6 +62,12 @@ app.post('/', function(req, res) {
                         }`
                     });
                     console.log('error', err);
+                    // if we don't have any non homebrew results, show the user the error
+                } else if (nonHomebrewBreweries.length < 1) {
+                    res.render('index', {
+                        breweries: null,
+                        error: `No breweries match that query!`
+                    });
                 } else {
                     res.render('index', {
                         breweries: breweries.brewery.items,
