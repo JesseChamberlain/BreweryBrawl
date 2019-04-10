@@ -70,7 +70,7 @@ app.post('/', function(req, res) {
                     });
                 } else {
                     res.render('index', {
-                        breweries: breweries.brewery.items,
+                        breweries: nonHomebrewBreweries,
                         error: null
                     });
                 }
