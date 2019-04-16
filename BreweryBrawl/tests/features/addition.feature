@@ -1,10 +1,11 @@
-Feature: Addition
-  Scenario: 1 + 0
-    Given I start with 1
-    When I add 0
-    Then I end up with 1
 
-  Scenario: 1 + 1
-    Given I start with 1
-    When I add 1
-    Then I end up with 2
+
+Feature: Addition
+
+Addition is great as a verification exercise to get the Cucumber-js infrastructure up and running
+
+  Scenario: Search something from Brewery Brawl
+    Given browse to web site "http://localhost:3333"
+    When input keyword "angels"
+    Then search result should contain "Angels & Devils"
+
