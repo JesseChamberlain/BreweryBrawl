@@ -5,45 +5,59 @@
     <meta charset="utf-8">
     <title><%= brewery.brewery_name %></title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300'  type='text/css'>
+    <link
+        href="https://fonts.googleapis.com/css?family=Bubblegum+Sans"
+        rel="stylesheet"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous"
+    />
 </head>
 
 <body>
     <%- include('components/header'); %>
-    <div class="container">
+    <div class="container brewery-container">
         <% if(brewery !== null){ %>
-            <div class="brewery-img">
+            <div class="brewery-img grid-col">
                 <% if(brewery.brewery_label_hd) { %>
                     <img src="<%= brewery.brewery_label_hd %>" alt="<%= brewery.brewery_name %> Logo">
                 <% } else if(brewery.brewery_label) { %>
                     <img src="<%= brewery.brewery_label %>" alt="<%= brewery.brewery_name %> Logo">
                 <% } %>
             </div>
-            <h3 class="brewery-name">
-                <%= brewery.brewery_name %>
-            </h3>
-            <p class="brewery-type">
-                <%= brewery.brewery_type %>
-            </p>
-            <p class="brewery-rating">
-                Rating: <%= brewery.rating.rating_score %>
-            </p>
-            <% if(brewery.brewery_description) { %>
-                <div class="brewery-description">
-                    <%= brewery.brewery_description %>
+            <div class="brewery-info grid-col">
+                <h3 class="brewery-name">
+                    <%= brewery.brewery_name %>
+                </h3>
+                <p class="brewery-type">
+                    <%= brewery.brewery_type %>
+                </p>
+                <div class="brewery-address">
+                    <%= brewery.location.brewery_address %><br>
+                    <%= brewery.location.brewery_city %>, <%= brewery.location.brewery_state %>
                 </div>
-            <% } %>
-            <p class="brewery-address">
-                <%= brewery.location.brewery_address %><br>
-                <%= brewery.location.brewery_city %>, <%= brewery.location.brewery_state %>
-            </p>
-            <% if(brewery.contact.url) { %>
-                <div class="brewery-website">
-                    <a href="<%= brewery.contact.url %>">Website</a>
+                <% if(brewery.contact.url) { %>
+                    <div class="brewery-website">
+                        <a href="<%= brewery.contact.url %>">Website</a>
+                    </div>
+                <% } %>
+                <p class="brewery-rating">
+                    Rating: <%= brewery.rating.rating_score %>
+                </p>
+            </div>
+            
+            <% if(brewery.brewery_description) { %>
+                <div class="brewery-description grid-col">
+                    <p><%= brewery.brewery_description %></p>
                 </div>
             <% } %>
 
             <% if(brewery.location.brewery_lng, brewery.location.brewery_lat) { %>
-                <div class="brewery-map">
+                <div class="brewery-map grid-col">
                         <iframe
                         id="map-frame"
                         width="700px"
@@ -54,10 +68,13 @@
                 </div>
             <% } %>
              <% if(beers !== null){ %>
-                <div class="brewery-beers">
-                    <% beers.forEach(function(beer){ %>
-                        <%- include('components/beer', {beer: beer.beer}); %>
+                <div class="brewery-beers-container grid-col">
+                    <h3 class="title">Beers</h3>
+                    <div class="brewery-beers">
+                        <% beers.forEach(function(beer){ %>
+                        <%- include('components/beer-block', {beer: beer.beer}); %>
                     <% }); %>
+                    </div>
                 </div>
             <% } %>
         <% } %>

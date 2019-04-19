@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title><%= beer.brewery.brewery_name %> - <%= beer.beer_name %></title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300'  type='text/css'>
+    <link
+        href="https://fonts.googleapis.com/css?family=Bubblegum+Sans"
+        rel="stylesheet"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous"
+    />
+</head>
+
+<body>
+    <%- include('components/header'); %>
+    <div class="container beer-container">
+        <% if(beer !== null){ %>
+            <div class="beer-image">
+                <img src="<%= beer.beer_label %>" alt="<%= beer.brewery.brewery_name %> - <%= beer.beer_name %>">
+            </div>
+            <div class="beer-name">
+                <%= beer.beer_name %><br>
+                <a href="/brewery/<%= beer.brewery.brewery_slug %>?id=<%= beer.brewery.brewery_id %>"><%= beer.brewery.brewery_name %></a>
+            </div>
+            <div class="beer-style">
+                Style: <%= beer.beer_style %>
+            </div>
+            <div class="beer-abv">
+                ABV: <%= beer.beer_abv %>
+            </div>
+            <div class="beer-ibu">
+                IBU: <%= beer.beer_ibu %>
+            </div>
+            <div class="beer-rating">
+                Rating: <%= beer.rating_score %>
+            </div>
+            <div class="beer-description">
+                <%= beer.beer_description %>
+            </div>
+            
+
+            
+        <% } %>
+        <% if(error !== null){ %>
+            <p><%= error %></p>
+        <% } %>
+    </div>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
