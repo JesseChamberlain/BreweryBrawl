@@ -27,7 +27,7 @@
             </div>
             <div class="beer-name">
                 <%= beer.beer_name %><br>
-                <a href="/brewery/<%= beer.brewery.brewery_id %>"><%= beer.brewery.brewery_name %></a>
+                <a href="/brewery/<%= beer.brewery.brewery_slug %>?id=<%= beer.brewery.brewery_id %>"><%= beer.brewery.brewery_name %></a>
             </div>
             <div class="beer-style">
                 Style: <%= beer.beer_style %>
