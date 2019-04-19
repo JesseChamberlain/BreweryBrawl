@@ -3,11 +3,9 @@ const router = express.Router();
 const request = require('request');
 
 // render our brewery page
-router.post('/brewery/:url', function(req, res) {
-    let query = req.body.query;
-    console.log(query);
-    let breweryId = req.params.id;
-    let url = `https://api.untappd.com/v4/brewery/info/${breweryId}?client_id=${
+router.get('/brewery/:url', function(req, res) {
+    let queryId = req.query.id;
+    let url = `https://api.untappd.com/v4/brewery/info/${queryId}?client_id=${
         process.env.UNTAPPD_CLIENT_ID
     }&client_secret=${process.env.UNTAPPD_CLIENT_SECRET}`;
 
