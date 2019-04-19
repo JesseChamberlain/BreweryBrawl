@@ -1,6 +1,6 @@
 <div class="brewery-block">
     <div class="brewery-img">
-        <a href="/brewery/<%= brewery.brewery_id %>">
+        <a href="/brewery/<%= brewery.brewery_slug %>?id=<%= brewery.brewery_id %>">
             <img src="<%= brewery.brewery_label %>" alt="<%= brewery.brewery_name %> Logo">
         </a>
     </div>
@@ -23,14 +23,14 @@
 
     <% if(brewery.location.lng, brewery.location.lat) { %>
         <div class="brewery-map">
-                <iframe
+            <iframe
                 id="map-frame"
                 width="150px"
                 height="150px"
                 frameborder="0" style="border:0"
                 src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCnPeSCSirjqSR0T5aX2dpKFhN9I7Xefjs&q=<%= brewery.location.lat %>,<%= brewery.location.lng %>" zoom="70" allowfullscreen>
-                </iframe>
+            </iframe>
         </div>
     <% } %>
-    <a href="/brewery/<%= brewery.brewery_id %>">See More</a>
+    <a href="/brewery/<%= brewery.brewery_slug %>?id=<%= brewery.brewery_id %>">See More</a>
 </div>
