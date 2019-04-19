@@ -31,7 +31,6 @@ router.post('/', function(req, res) {
                 });
                 console.log('error', err);
             } else {
-                console.log(breweries.brewery.items);
                 res.render('index', {
                     breweries: breweries.brewery.items,
                     error: null
