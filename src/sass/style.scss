@@ -112,7 +112,12 @@ h1 h2 h3 h4 h5 h6 {
 }
 
 .grid-item {
-    background-image: linear-gradient( 141deg, #f9e402 0%, #dba01ffa 51%, #faf7de 75%);
+    background-image: linear-gradient(
+        141deg,
+        #f9e402 0%,
+        #dba01ffa 51%,
+        #faf7de 75%
+    );
 }
 
 .item1 {
@@ -130,6 +135,13 @@ h1 h2 h3 h4 h5 h6 {
 .brewery-img {
     img {
         max-width: 250px;
+    }
+}
+
+.taran {
+    h1 {
+        position: relative;
+        top: 0;
     }
 }
 
@@ -151,7 +163,12 @@ fieldset {
     height: 85px;
     margin: 0 0 0 -74px;
     padding: 5px;
-    background-image: linear-gradient( 141deg, #f9e402 0%, #dba01ffa 51%, #faf7de 75%);
+    background-image: linear-gradient(
+        141deg,
+        #f9e402 0%,
+        #dba01ffa 51%,
+        #faf7de 75%
+    );
     border: 1px solid $color-primary-0;
     margin: 15px;
     img {
