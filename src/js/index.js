@@ -8,7 +8,8 @@ import imageImporter from './modules/imageImporter';
 let images = [
     [taranImageSrc, 'taran'],
     [gravityTapImageSrc, 'gravityTap'],
-    [logoImageSrc, 'header-link']
+    [logoImageSrc, 'header-link'],
+    [logoImageSrc, 'footer-link']
 ];
 
 // This is a test function to make sure webpack has compiled assets

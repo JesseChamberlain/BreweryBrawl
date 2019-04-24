@@ -1,6 +1,13 @@
 @import 'paletton';
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 header,
 body {
+    background-color: $color-primary-1;
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 19px;
     line-height: 21px;
@@ -9,6 +16,18 @@ body {
     flex-direction: column;
     margin: 0 auto;
     border-image: url('/img/border-bg-beer.jpg') 30px round;
+    opacity: 1;
+    transition: 0.9s opacity;
+
+    .fade {
+        opacity: 0;
+        transition: all 1s ease-out;
+    }
+}
+
+.searchHeader {
+    background-image: url('/img/border-bg-beer.jpg');
+    background-size: cover;
 }
 
 h1 h2 h3 h4 h5 h6 {
@@ -30,6 +49,7 @@ h1 h2 h3 h4 h5 h6 {
         margin: 10px;
         border: 1px solid $color-primary-3;
         border-radius: 5px;
+        background-color: #fff;
     }
 }
 
@@ -112,7 +132,12 @@ h1 h2 h3 h4 h5 h6 {
 }
 
 .grid-item {
-    background-image: linear-gradient( 141deg, #f9e402 0%, #dba01ffa 51%, #faf7de 75%);
+    background-image: linear-gradient(
+        141deg,
+        #f9e402 0%,
+        #dba01ffa 51%,
+        #faf7de 75%
+    );
 }
 
 .item1 {
@@ -125,6 +150,7 @@ h1 h2 h3 h4 h5 h6 {
     border: 1px solid brown;
     border-radius: 5px;
     background-color: #fff;
+    margin-top: 5px;
 }
 
 .brewery-img {
@@ -151,7 +177,9 @@ fieldset {
     height: 85px;
     margin: 0 0 0 -74px;
     padding: 5px;
-    background-image: linear-gradient( 141deg, #f9e402 0%, #dba01ffa 51%, #faf7de 75%);
+    background-image: url('/img/beer-bg.jpg');
+    background-size: cover;
+
     border: 1px solid $color-primary-0;
     margin: 15px;
     img {
@@ -162,11 +190,55 @@ fieldset {
     }
 }
 
+#brewFooter {
+    height: 85px;
+    margin: 0 0 0 -74px;
+    padding: 5px;
+    background-image: url('/img/beer-bg.jpg');
+    background-size: cover;
+    border: 1px solid $color-primary-0;
+    margin: 15px;
+    img {
+        width: 100%;
+        max-width: 330px;
+        text-align: left;
+        padding: 5px;
+    }
+
+    .footer-links {
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 25px;
+    }
+}
+
 .history-column {
     margin: 10px;
     padding: 10px;
     background-color: #faf7de;
-    border: 1px solid $color-primary-0;
+    border: 1px solid #ac9336;
+    background-image: url(/img/border-bg-beer.jpg);
+    background-position-x: 541px;
+
+    p {
+        text-shadow: 2px 2px $color-primary-4;
+    }
+}
+
+#flag {
+    box-sizing: content-box;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: relative;
+    background: #fff;
+    color: #000;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-align: center;
+    text-transform: uppercase;
+    display: block;
+    border-radius: 7px;
 }
 
 .brewery-block {
@@ -174,26 +246,38 @@ fieldset {
     flex-wrap: wrap;
     flex-direction: column;
     width: 100%;
-    height: 370px;
+    height: 100%;
+    min-height: 370px;
     background-color: #ccc;
-    padding: 15px 0;
+    padding: 10px 0;
     max-width: 300px;
     justify-content: space-around;
     border: 1px solid $color-primary-0;
     margin: 15px 15px 15px 0px;
     text-align: center;
     flex-direction: row;
+
     a {
         font-size: 15px;
     }
+
+    .see-more-link {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
     .brewery-img img {
         max-width: 100px;
         display: inline;
     }
+
     .brewery-name {
         font-size: 20px;
         width: 100%;
+        padding-top: 5px;
     }
+
     .brewery-address {
         font-size: 18px;
         width: 100%;

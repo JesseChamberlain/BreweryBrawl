@@ -1,36 +1,49 @@
 <div class="brewery-block">
     <div class="brewery-img">
-        <a href="/brewery/<%= brewery.brewery_slug %>?id=<%= brewery.brewery_id %>">
-            <img src="<%= brewery.brewery_label %>" alt="<%= brewery.brewery_name %> Logo">
+        <a
+            href="/brewery/<%= brewery.brewery_slug %>?id=<%= brewery.brewery_id %>"
+        >
+            <img
+                src="<%= brewery.brewery_label %>"
+                alt="<%= brewery.brewery_name %> Logo"
+            />
         </a>
     </div>
     <h3 class="brewery-name">
         <%= brewery.brewery_name %>
     </h3>
     <div class="brewery-address">
-        <%= brewery.location.brewery_city %>, <%= brewery.location.brewery_state %>
+        <%= brewery.location.brewery_city %>, <%= brewery.location.brewery_state
+        %>
+        <a
+            class="see-more-link"
+            href="/brewery/<%= brewery.brewery_slug %>?id=<%= brewery.brewery_id %>"
+            >See More</a
+        >
     </div>
-    <% if(brewery.phone) { %>
-        <div class="brewery-phone">
-            <%= brewery.phone %>
-        </div>
-    <% } %>
-    <% if(brewery.website_url) { %>
-        <div class="brewery-website">
-            <a href="<%= brewery.website_url %>">Website</a>
-        </div>
-    <% } %>
 
-    <% if(brewery.location.lng, brewery.location.lat) { %>
-        <div class="brewery-map">
-            <iframe
-                id="map-frame"
-                width="150px"
-                height="150px"
-                frameborder="0" style="border:0"
-                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCnPeSCSirjqSR0T5aX2dpKFhN9I7Xefjs&q=<%= brewery.location.lat %>,<%= brewery.location.lng %>" zoom="70" allowfullscreen>
-            </iframe>
-        </div>
+    <% if(brewery.phone) { %>
+    <div class="brewery-phone">
+        <%= brewery.phone %>
+    </div>
+    <% } %> <% if(brewery.website_url) { %>
+    <div class="brewery-website">
+        <a href="<%= brewery.website_url %>">Website</a>
+    </div>
+    <% } %> <% if(brewery.location.lng, brewery.location.lat) { %>
+
+    <div class="brewery-map">
+        <iframe
+            id="map-frame"
+            width="150px"
+            height="150px"
+            frameborder="0"
+            style="border:0"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCnPeSCSirjqSR0T5aX2dpKFhN9I7Xefjs&q=<%= brewery.location.lat %>,<%= brewery.location.lng %>"
+            zoom="70"
+            allowfullscreen
+        >
+        </iframe>
+    </div>
     <% } %>
-    <a href="/brewery/<%= brewery.brewery_slug %>?id=<%= brewery.brewery_id %>">See More</a>
 </div>
