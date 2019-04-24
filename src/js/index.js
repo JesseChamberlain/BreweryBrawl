@@ -2,6 +2,7 @@ import '../sass/style.scss';
 import logoImageSrc from '../img/logo.png';
 import taranImageSrc from '../img/taran.jpg';
 import gravityTapImageSrc from '../img/GravityTap.jpg';
+import bacCalculator from './modules/bacCalculator';
 import imageImporter from './modules/imageImporter';
 
 // Set the images to their imports and id
@@ -23,3 +24,6 @@ document.body.appendChild(buildBody());
 
 // Load images to imageImporter
 imageImporter(images);
+
+// Load blood alcohol content calculator
+bacCalculator();
