@@ -91,6 +91,12 @@
                     include('components/beer-block', {beer: beer.beer}); %> <%
                     }); %>
                 </ul>
+                <a
+                    class="beer-see-more ghost-button"
+                    href="/<%= brewery.brewery_slug %>/beers?name=<%=
+                    brewery.brewery_name %>"
+                    >See More Beers
+                </a>
             </div>
             <% } %> <% } %> <% if(error !== null){ %>
             <p><%= error %></p>
