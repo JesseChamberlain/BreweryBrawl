@@ -86,11 +86,11 @@
                     id="filter-input"
                     placeholder="Filter beers.."
                 />
-                <ul class="brewery-beers" id="brewery-beer-list">
+                <div class="brewery-beers" id="brewery-beer-list">
                     <% beers.forEach(function(beer){ %> <%-
                     include('components/beer-block', {beer: beer.beer}); %> <%
                     }); %>
-                </ul>
+                </div>
                 <a
                     class="beer-see-more ghost-button"
                     href="/<%= brewery.brewery_slug %>/beers?name=<%=

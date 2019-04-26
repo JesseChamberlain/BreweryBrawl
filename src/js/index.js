@@ -25,4 +25,4 @@ document.body.appendChild(buildBody());
 // Load images to imageImporter
 imageImporter(images);
 
-filterList('brewery-beer-list', 'filter-input');
+filterList('beer-block', 'filter-input');

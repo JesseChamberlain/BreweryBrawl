@@ -1,20 +1,21 @@
 // Module to filter a list from text input
-export default function filterList(ulID, inputID) {
+// Classname is the class of the items you wish to filter
+// inputID is the id of the input you want to filter from
+export default function filterList(className, inputID) {
     function filterListListener() {
         // Declare variables
         let input = document.getElementById(inputID);
         let filter = input.value.toUpperCase();
-        let ul = document.getElementById(ulID);
-        let lis = ul.getElementsByTagName('li');
-        lis = [...lis];
+        let elements = document.getElementsByClassName(className);
+        elements = [...elements];
 
         // Loop through all list items, and hide those who don't match the search query
-        lis.forEach(function(li) {
-            let txtValue = li.textContent || li.innerText;
+        elements.forEach(function(element) {
+            let txtValue = element.textContent || element.innerText;
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                li.style.display = '';
+                element.style.display = '';
             } else {
-                li.style.display = 'none';
+                element.style.display = 'none';
             }
         });
     }
