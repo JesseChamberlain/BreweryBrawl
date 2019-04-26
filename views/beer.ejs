@@ -32,7 +32,7 @@
             <div class="beer-style">
                 Style: <%= beer.beer_style %>
             </div>
-            <div class="beer-abv">
+            <div class="beer-abv" id="abv" data-value="<%= beer.beer_abv %>">
                 ABV: <%= beer.beer_abv %>
             </div>
             <div class="beer-ibu">
@@ -53,29 +53,29 @@
         <% } %>
     </div>
     <div class="container bac-calculator" id="bac-calc">
-        <input type="radio" id="female" name="gender" value="email">
+        <input type="radio" id="female" name="gender" value="female">
         <label for="female">Female</label>
-        <input type="radio" id="male" name="gender" value="female">
+        <input type="radio" id="male" name="gender" value="male">
         <label for="male">Male</label>
         <input
             type="range"
-            id="bodyWeight"
-            name="bodyWeight"
+            id="body-weight-slider"
+            name="weightSlider"
             min="0" max="800" value="80" step="5">
-        <label for="bodyWeight">Body Weight: </label>
+        <label id="weight-label" for="bodyWeight">Body Weight: </label>
         <input
             type="range"
-            id="drinkSlider"
-            name="drinks"
+            id="drinks-slider"
+            name="drinksSlider"
             min="0" max="30" value="2" step="1">
-        <label for="drinkSlider">Drinks: </label>
+        <label id="drinks-label" for="drinkSlider">Drinks: </label>
         <input
             type="range"
-            id="hours"
-            name="hours"
+            id="hours-slider"
+            name="hoursSlider"
             min="0" max="600" value="15" step="15">
-        <label for="hours">Hours: </label>
-        <p>BAC: </p>
+        <label id="hours-label" for="hours">Hours: </label>
+        <p id="bac-total">BAC: </p>
     </div>
     <script src="../js/main.js"></script>
 </body>

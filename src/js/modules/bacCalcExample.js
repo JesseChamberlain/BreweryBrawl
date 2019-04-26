@@ -42,7 +42,7 @@
         var number1 = currentState.gender === 'male' ? 0.58 : 0.49;
         var number2 = currentState.gender === 'male' ? 0.015 : 0.017;
         var bac =
-            (0.806 * (totalDrink * 1.4) * 1.2) /
+            (abv * (totalDrink * 1.4) * 1.2) /
                 (number1 * (currentState.bodyWeight / 2.205)) -
             number2 *
                 ((currentState.duration.hours * 60 +
