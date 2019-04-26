@@ -12,37 +12,29 @@ export default function bacCalculator() {
         var hoursLabel = document.getElementById('hours-label');
         var bacLabel = document.getElementById('bac-total');
         var beerABV = document.getElementById('abv').dataset.value;
-        var gender = 'male';
+        var gender = 'female';
         var weight = weightSlider.value;
         var drinks = drinksSlider.value;
         var hours = hoursSlider.value;
-
-        console.log('bacCalculator');
-        console.log(beerABV);
+        bacFormula();
 
         weightSlider.addEventListener('change', function() {
             weight = this.value;
-            weightLabel.innerHTML = 'Body Weight: ' + weight;
-            console.log('Body Weight: ', weight, weightLabel);
             bacFormula();
         });
 
         drinksSlider.addEventListener('change', function() {
             drinks = this.value;
-            drinksLabel.innerHTML = 'Drinks: ' + drinks;
-            console.log('Drinks: ', drinks, drinksLabel);
             bacFormula();
         });
 
         hoursSlider.addEventListener('change', function() {
             hours = this.value;
-            hoursLabel.innerHTML = 'Hours: ' + hours;
-            console.log('Hours: ', hours, hoursLabel);
             bacFormula();
         });
 
         function bacFormula() {
-            var number1 = gender === 'male' ? 0.58 : 0.49;
+            var number1 = gender === 'male' ? 0.68 : 0.55;
             var number2 = gender === 'male' ? 0.015 : 0.017;
             // (A × 5.14/W × r) - .015 × H
             //     Where:
@@ -52,15 +44,15 @@ export default function bacCalculator() {
             //        H: Time passed since drinking, in hours
 
             var bac =
-                (0.806 * (drinks * 1.4) * 1.2) / (number1 * (weight / 2.205)) -
-                number2 * (hours / 60);
+                ((drinks * (beerABV * 2.8)) /
+                    (number1 * (weight * 453.592) * (hours / 60))) *
+                    100 -
+                number2;
             // bac = Math.max(0, Math.round(bac * 100) / 100);
+            weightLabel.innerHTML = 'Body Weight: ' + weight;
+            drinksLabel.innerHTML = 'Drinks: ' + drinks;
+            hoursLabel.innerHTML = 'Hours: ' + hours;
             bacLabel.innerHTML = 'BAC: ' + bac;
-            console.log(number1);
-            console.log(number2);
-            console.log(weight);
-            console.log(drinks);
-            console.log(bac);
         }
     }
 }
