@@ -7,7 +7,9 @@ router.get(/beers/, function(req, res) {
     let breweryName = req.query.name;
     let url = `https://api.untappd.com/v4/search/beer?client_id=${
         process.env.UNTAPPD_CLIENT_ID
-    }&q=${breweryName}&client_secret=${process.env.UNTAPPD_CLIENT_SECRET}`;
+    }&q=${breweryName}&client_secret=${
+        process.env.UNTAPPD_CLIENT_SECRET
+    }&limit=50`;
 
     request(url, function(err, response, body) {
         if (err) {

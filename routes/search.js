@@ -17,7 +17,7 @@ router.post('/brewery-search', function(req, res) {
     let query = req.body.query;
     let url = `https://api.untappd.com/v4/search/brewery?client_id=${
         process.env.UNTAPPD_CLIENT_ID
-    }&client_secret=${process.env.UNTAPPD_CLIENT_SECRET}&q=${query}`;
+    }&client_secret=${process.env.UNTAPPD_CLIENT_SECRET}&q=${query}&limit=50`;
 
     request(url, function(err, response, body) {
         if (err) {
@@ -50,7 +50,7 @@ router.post('/beer-search', function(req, res) {
     let query = req.body.query;
     let url = `https://api.untappd.com/v4/search/beer?client_id=${
         process.env.UNTAPPD_CLIENT_ID
-    }&client_secret=${process.env.UNTAPPD_CLIENT_SECRET}&q=${query}`;
+    }&client_secret=${process.env.UNTAPPD_CLIENT_SECRET}&q=${query}&limit=50`;
 
     request(url, function(err, response, body) {
         if (err) {

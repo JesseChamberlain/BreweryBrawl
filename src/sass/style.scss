@@ -23,6 +23,13 @@ input[type='text'] {
     padding: 5px;
 }
 
+ul {
+    &.unstyled {
+        padding: 0;
+        list-style: none;
+    }
+}
+
 .ghost-button {
     background-color: $color-primary-3;
     -moz-border-radius: 8px;
