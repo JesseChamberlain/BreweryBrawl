@@ -51,6 +51,11 @@
             <% if(breweries !== null){ %>
             <div class="brewery-search-results row" id="brewery-results">
                 <h4>Your search results:</h4>
+                <input
+                    type="text"
+                    id="filter-input"
+                    placeholder="Filter beers.."
+                />
                 <% breweries.forEach(function(brewery){ %> <%-
                 include('components/brewery-block', {brewery: brewery.brewery});
                 %> <% }); %>

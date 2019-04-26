@@ -5,19 +5,24 @@ export default function filterList(className, inputID) {
     function filterListListener() {
         // Declare variables
         let input = document.getElementById(inputID);
-        let filter = input.value.toUpperCase();
-        let elements = document.getElementsByClassName(className);
-        elements = [...elements];
 
-        // Loop through all list items, and hide those who don't match the search query
-        elements.forEach(function(element) {
-            let txtValue = element.textContent || element.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                element.style.display = '';
-            } else {
-                element.style.display = 'none';
+        if (input) {
+            let filter = input.value.toUpperCase();
+            let elements = document.getElementsByClassName(className);
+            if (elements) {
+                elements = [...elements];
+
+                // Loop through all list items, and hide those who don't match the search query
+                elements.forEach(function(element) {
+                    let txtValue = element.textContent || element.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        element.style.display = '';
+                    } else {
+                        element.style.display = 'none';
+                    }
+                });
             }
-        });
+        }
     }
 
     document.addEventListener('keyup', function(event) {

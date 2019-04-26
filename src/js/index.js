@@ -26,3 +26,4 @@ document.body.appendChild(buildBody());
 imageImporter(images);
 
 filterList('beer-block', 'filter-input');
+filterList('brewery-block', 'filter-input');
