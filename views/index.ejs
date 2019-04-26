@@ -27,6 +27,9 @@
     <body class="container-fluid">
         <%- include('components/header'); %>
         <div class="container">
+            <div class="page-headline">
+                <h3>Search for your favorite brewery:</h3>
+            </div>
             <fieldset>
                 <form action="/" method="post">
                     <input
@@ -44,12 +47,13 @@
                 </form>
             </fieldset>
         </div>
-        <div class="container"> 
+        <div class="container">
             <% if(breweries !== null){ %>
             <div class="brewery-search-results row" id="brewery-results">
+                <h4>Your search results:</h4>
                 <% breweries.forEach(function(brewery){ %> <%-
-                include('components/brewery-block', {brewery:
-                brewery.brewery}); %> <% }); %>
+                include('components/brewery-block', {brewery: brewery.brewery});
+                %> <% }); %>
             </div>
             <% } %> <% if(error !== null){ %>
             <p><%= error %></p>
@@ -65,30 +69,31 @@
                     href="https://en.wikipedia.org/wiki/Beer"
                 ></a>
                 <p class="col-sm history-column">
-                    Beer is one of the oldest and most widely
-                    consumed alcoholic drinks in the world, and the third
-                    most popular drink overall after water and tea.<br/><br/> Beer is
-                    brewed from cereal grains—most commonly from malted barley,
-                    though wheat, maize (corn), and rice are also used. During
-                    the brewing process, fermentation of the starch sugars in
-                    the wort produces ethanol and carbonation in the resulting&nbsp;beer. <br/><br/> Most modern beer is brewed with hops, which add
-                    bitterness and other flavours and act as a natural
-                    preservative and stabilizing&nbsp;agent. 
+                    Beer is one of the oldest and most widely consumed alcoholic
+                    drinks in the world, and the third most popular drink
+                    overall after water and tea.<br /><br />
+                    Beer is brewed from cereal grains—most commonly from malted
+                    barley, though wheat, maize (corn), and rice are also used.
+                    During the brewing process, fermentation of the starch
+                    sugars in the wort produces ethanol and carbonation in the
+                    resulting&nbsp;beer. <br /><br />
+                    Most modern beer is brewed with hops, which add bitterness
+                    and other flavours and act as a natural preservative and
+                    stabilizing&nbsp;agent.
                 </p>
 
                 <p class="col-sm history-column">
-                    Other flavouring agents
-                    such as gruit, herbs, or fruits may be included or used
-                    instead of hops. In commercial brewing, the natural
-                    carbonation effect is often removed during processing and
-                    replaced with forced carbonation.<br/><br/>
+                    Other flavouring agents such as gruit, herbs, or fruits may
+                    be included or used instead of hops. In commercial brewing,
+                    the natural carbonation effect is often removed during
+                    processing and replaced with forced carbonation.<br /><br />
                     Some of humanity's earliest known writings refer to the
                     production and distribution of beer: the Code of Hammurabi
-                    included laws regulating beer and beer parlours,<br/><br/> and "The
-                    Hymn to Ninkasi", a prayer to the Mesopotamian goddess of
-                    beer, served as both a prayer and as a method of remembering
-                    the recipe for beer in a culture with few literate
-                    people.
+                    included laws regulating beer and beer parlours,<br /><br />
+                    and "The Hymn to Ninkasi", a prayer to the Mesopotamian
+                    goddess of beer, served as both a prayer and as a method of
+                    remembering the recipe for beer in a culture with few
+                    literate people.
                 </p>
 
                 <p class="col-sm-12 history-column">
@@ -107,11 +112,15 @@
                     Beer forms part of the culture of many nations and is
                     associated with social traditions such as beer festivals, as
                     well as a rich pub culture involving activities like pub
-                    crawling and pub games.<br/>
-                    <em><a href="https://en.wikipedia.org/wiki/Beer" target="_blank">wikipedia</a></em>
+                    crawling and pub games.<br />
+                    <em
+                        ><a
+                            href="https://en.wikipedia.org/wiki/Beer"
+                            target="_blank"
+                            >wikipedia</a
+                        ></em
+                    >
                 </p>
-
-               
             </div>
         </div>
 

@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const index = require('./routes/index');
 const brewery = require('./routes/brewery');
 const beer = require('./routes/beer');
+const search = require('./routes/search');
 require('dotenv').config();
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -22,3 +23,5 @@ app.use('/', index);
 app.use(brewery);
 
 app.use(beer);
+
+app.use(search);

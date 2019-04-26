@@ -1,10 +1,13 @@
-<div class="beer-block">
+<li class="beer-block">
     <div class="beer-img">
-        <img src="<%= beer.beer_label %>" alt="<%= beer.beer_name %> Label">
-
+        <img src="<%= beer.beer_label %>" alt="<%= beer.beer_name %> Label" />
     </div>
     <h4 class="beer-name">
-        <a href="/beer/<%= beer.beer_slug %>?id=<%= beer.bid %>"><%= beer.beer_name %></a>
+        <a
+            class="beer-name-anchor"
+            href="/beer/<%= beer.beer_slug %>?id=<%= beer.bid %>"
+            ><%= beer.beer_name %></a
+        >
     </h4>
     <p class="beer-rating">
         Rating: <%= beer.rating_score %>
@@ -18,4 +21,4 @@
     <p class="beer-ibu">
         IBU: <%= beer.beer_ibu %>
     </p>
-</div>
+</li>
