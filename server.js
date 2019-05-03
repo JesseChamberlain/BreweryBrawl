@@ -7,6 +7,8 @@ const brewery = require('./routes/brewery');
 const beer = require('./routes/beer');
 const search = require('./routes/search');
 const beers = require('./routes/beers');
+const taran = require('./routes/taran');
+
 require('dotenv').config();
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -28,3 +30,5 @@ app.use(beer);
 app.use(search);
 
 app.use(beers);
+
+app.use(taran);
