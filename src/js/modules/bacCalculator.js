@@ -14,6 +14,7 @@ export default function bacCalculator() {
         let beerABV = document.getElementById('abv').dataset.value;
         let gender = 'female';
         let distRatio = gender === 'male' ? 0.58 : 0.49;
+        let distRatioMod = gender === 'male' ? 0.015 : 0.017;
         let weight = weightSlider.value;
         let drinks = drinksSlider.value;
         let hours = hoursSlider.value;
@@ -44,7 +45,7 @@ export default function bacCalculator() {
             let alcoholGrams = drinks * (beerABV * 2.8);
             let bac =
                 (alcoholGrams / (weight * 453.592 * distRatio)) * 100 -
-                hours * 0.015;
+                hours * distRatioMod;
             bac = Math.round(bac * 100) / 100;
             weightLabel.innerHTML = 'Body Weight: ' + weight;
             drinksLabel.innerHTML = 'Drinks: ' + drinks;
