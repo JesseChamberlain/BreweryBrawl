@@ -3,31 +3,31 @@ const router = express.Router();
 const request = require('request');
 
 // render our brewery page
-router.get('/beer/:slug', function(req, res) {
-    let beerId = req.query.id;
-    let url = `https://api.untappd.com/v4/beer/info/${beerId}?client_id=${
+router.get('/api/activity-feed', function(req, res) {
+    let breweryID = req.query.breweryID;
+    let url = `https://api.untappd.com/v4/brewery/checkins/${breweryID}?client_id=${
         process.env.UNTAPPD_CLIENT_ID
     }&client_secret=${process.env.UNTAPPD_CLIENT_SECRET}`;
 
     request(url, function(err, response, body) {
         if (err) {
-            res.render('beer', {
-                beer: null,
+            res.send({
+                activityFeed: null,
                 error: 'Error, please try again'
             });
             console.log('error', err);
         } else {
             let data = JSON.parse(body);
-            let beer = data.response.beer;
+            let activityFeed = data.response.checkins.items;
             if (data.meta.code !== 200) {
-                res.render('beer', {
-                    beer: null,
-                    error: `Error, please try again: ${data.meta.error_detail}`
+                res.send({
+                    activityFeed: null,
+                    error: err
                 });
                 console.log('error', err);
             } else {
-                res.render('beer', {
-                    beer: beer,
+                res.send({
+                    activityFeed: activityFeed,
                     error: null
                 });
             }

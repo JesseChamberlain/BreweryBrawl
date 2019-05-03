@@ -6,6 +6,8 @@ const index = require('./routes/index');
 const brewery = require('./routes/brewery');
 const beer = require('./routes/beer');
 const taran = require('./routes/taran');
+const api = require('./routes/api');
+
 require('dotenv').config();
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -25,3 +27,5 @@ app.use(brewery);
 app.use(beer);
 
 app.use(taran);
+
+app.use(api);

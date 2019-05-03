@@ -4,6 +4,7 @@
     "description": "Untappd.com Brewery API app",
     "private": true,
     "dependencies": {
+        "axios": "^0.18.0",
         "body-parser": "^1.18.3",
         "dotenv": "^6.2.0",
         "ejs": "^2.6.1",

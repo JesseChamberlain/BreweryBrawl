@@ -1,0 +1,9 @@
+<div class="checkins">
+    <% checkins.forEach(function(checkin){ %>
+    <div class="checkin">
+        <div class="beer-img">
+            <img src="<%= checkin.user.user_avatar %>" alt="" />
+        </div>
+    </div>
+    <% }); %>
+</div>

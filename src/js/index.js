@@ -3,6 +3,7 @@ import logoImageSrc from '../img/logo.png';
 import taranImageSrc from '../img/taran.jpg';
 import gravityTapImageSrc from '../img/GravityTap.jpg';
 import imageImporter from './modules/imageImporter';
+import activityFeed from './modules/activityFeed';
 
 // Set the images to their imports and id
 let images = [
@@ -23,3 +24,5 @@ document.body.appendChild(buildBody());
 
 // Load images to imageImporter
 imageImporter(images);
+
+window.activityFeed = activityFeed;
