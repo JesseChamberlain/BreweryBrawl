@@ -89,12 +89,14 @@
             </div>
             <% } %>
             <button
-                class="ghost-button"
+                class="ghost-button activity-feed-button"
                 onclick="activityFeed(<%= brewery.brewery_id %>)"
             >
                 See Activity Feed
             </button>
-            <div class="activity-feed-container" id="activity-feed"></div>
+            <div class="activity-feed-container hidden" id="activity-feed">
+                <h3>Activity Feed</h3>
+            </div>
             <% } %> <% if(error !== null){ %>
             <p><%= error %></p>
             <% } %>

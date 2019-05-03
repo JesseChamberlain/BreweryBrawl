@@ -15,6 +15,10 @@ h1 h2 h3 h4 h5 h6 {
     font-family: 'Bubblegum Sans', cursive;
 }
 
+.hidden {
+    display: none;
+}
+
 .container {
     display: grid;
     grid-gap: 10px;
@@ -35,7 +39,7 @@ h1 h2 h3 h4 h5 h6 {
 
 .brewery-container {
     grid-template-columns: 3fr 3fr 2fr;
-    grid-template-rows: 1fr 1fr 4fr;
+    grid-template-rows: 1fr 1fr 4fr 2fr;
     overflow-y: auto;
     #map-frame {
         max-width: 100%;
@@ -91,6 +95,19 @@ h1 h2 h3 h4 h5 h6 {
             padding: 10px;
             margin-bottom: 0;
         }
+    }
+    .activity-feed-button {
+        grid-column: 2;
+        grid-row: 5;
+    }
+    .activity-feed-container {
+        grid-column: 1 / 3;
+        grid-row: 6;
+    }
+    .checkins {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        overflow-y: auto;
     }
 }
 

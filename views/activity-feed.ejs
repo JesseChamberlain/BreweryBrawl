@@ -1,8 +1,20 @@
 <div class="checkins">
     <% checkins.forEach(function(checkin){ %>
     <div class="checkin">
-        <div class="beer-img">
-            <img src="<%= checkin.user.user_avatar %>" alt="" />
+        <div class="profile">
+            <img
+                src="<%= checkin.user.user_avatar %>"
+                alt="<$= checkin.user.user_name"
+            />
+            <div class="user-name"><%= checkin.user.user_name %></div>
+        </div>
+        <div class="beer">
+            <div class="beer-name">
+                <%= checkin.beer.beer_name %>
+            </div>
+        </div>
+        <div class="comment">
+            <%= checkin.checkin_comment %>
         </div>
     </div>
     <% }); %>

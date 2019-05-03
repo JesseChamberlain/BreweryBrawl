@@ -9,6 +9,8 @@ export default function activityFeed(breweryID) {
         var html = ejs.render(templates.activityFeed, {
             checkins: response.data.activityFeed
         });
-        document.getElementById('activity-feed').innerHTML = html;
+        var feed = document.getElementById('activity-feed');
+        feed.innerHTML = html;
+        feed.classList.remove('hidden');
     });
 }
