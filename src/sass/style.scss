@@ -18,6 +18,8 @@ body {
     border-image: url('/img/border-bg-beer.jpg') 30px round;
     opacity: 1;
     transition: 0.9s opacity;
+    //background-image: url('/img/beer-animated-slow.gif');
+    //background-size: 100% 100%;
 
     .fade {
         opacity: 0;
@@ -171,6 +173,11 @@ fieldset {
 .brewery-search-results {
     min-height: 300px;
     justify-content: space-around;
+}
+
+.ghost-button {
+    background-image: url('/img/beer-animated.gif');
+    background-size: 100% 100%;
 }
 
 #brewHeader {
