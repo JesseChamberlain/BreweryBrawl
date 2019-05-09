@@ -161,6 +161,13 @@ h1 h2 h3 h4 h5 h6 {
     }
 }
 
+.taran {
+    h1 {
+        position: relative;
+        top: 0;
+    }
+}
+
 #map-frame {
     max-width: 350px;
     max-height: 350px;
@@ -184,9 +191,18 @@ fieldset {
     height: 85px;
     margin: 0 0 0 -74px;
     padding: 5px;
+<<<<<<< HEAD
     background-image: url('/img/beer-bg.jpg');
     background-size: cover;
 
+=======
+    background-image: linear-gradient(
+        141deg,
+        #f9e402 0%,
+        #dba01ffa 51%,
+        #faf7de 75%
+    );
+>>>>>>> d817280efbf979bbf767aaeac9f45a80ba2b7222
     border: 1px solid $color-primary-0;
     margin: 15px;
     img {
