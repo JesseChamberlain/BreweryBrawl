@@ -189,27 +189,13 @@ fieldset {
 
 #brewHeader {
     height: 85px;
-    margin: 0 0 0 -74px;
-    padding: 5px;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    background-image: url('/img/beer-bg.jpg');
-    background-size: cover;
 
-=======
-    background-image: linear-gradient(
-        141deg,
-        #f9e402 0%,
-        #dba01ffa 51%,
-        #faf7de 75%
-    );
->>>>>>> d817280efbf979bbf767aaeac9f45a80ba2b7222
-=======
+    padding: 5px;
     background-image: url('/img/beer-bg.jpg');
     background-size: cover;
->>>>>>> acf5118bc984a158bedc9f9ad21e9a3f897b0469
     border: 1px solid $color-primary-0;
     margin: 15px;
+
     img {
         width: 100%;
         max-width: 330px;
@@ -220,12 +206,12 @@ fieldset {
 
 #brewFooter {
     height: 85px;
-    margin: 0 0 0 -74px;
     padding: 5px;
     background-image: url('/img/beer-bg.jpg');
     background-size: cover;
     border: 1px solid $color-primary-0;
     margin: 15px;
+
     img {
         width: 100%;
         max-width: 330px;
